@@ -1,0 +1,31 @@
+@import "material-you";
+
+$top-vh: 32px;
+$desktop-banner-height: 88px;
+$mobile-banner-height: 64px;
+
+.theme-switcher {
+	position: fixed;
+	top: calc(#{$top-vh} + #{$desktop-banner-height});
+	right: 32px;
+	z-index: 999;
+
+	@include material-button--filled-secondary;
+	border-radius: 14px;
+	height: 3.5rem;
+	font-weight: 500;
+	box-shadow: $elevated-shadow;
+	padding: 28px 24px;
+	transition: top 0.3s ease;
+
+	&__toggle-icon {
+		max-width: 24px;
+		overflow: hidden;
+	}
+
+	@media (max-width: 767px) {
+		top: calc(#{$top-vh} + #{$mobile-banner-height});
+		font-size: 12px;
+		padding: 24px 20px;
+	}
+}
